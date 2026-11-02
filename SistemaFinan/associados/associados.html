@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associados - Finan</title>
+    <link rel="stylesheet" href="associados.css">
+</head>
+
+<body>
+    <div class="menu">
+        <header class="logo-box">
+            <img id="logo-img" src="/SistemaFinan/imgs/LogoHorizontal.png" alt="">
+        </header>
+        <section>
+            <div class="perfil-box">
+                <div class="perfil-img">
+                    <img id="perfil-img" src="/SistemaFinan/imgs/AMAQ-LOGO.jpg" alt="">
+                </div>
+                <div class="perfil">
+                    <h5>AMAQ</h5>
+                    Associação
+                </div>
+            </div>
+            <h4 class="tittle-menu">MENU PRINCIPAL</h3>
+        </section>
+        <nav class="nav-menu">
+            <button class="button-menu">
+                <a class="item-content" href="/SistemaFinan/dashboard/dashboard.html">
+                    <img id="item-img" src="/SistemaFinan/imgs/dashboard.png" alt="">
+                    Dashboard
+                </a>
+            </button>
+            <button class="button-menu">
+                <a class="item-content" href="/SistemaFinan/associados/associados.html">
+                    <img id="item-img" src="/SistemaFinan/imgs/associados.png" alt="">
+                    Associados
+                </a>
+            </button>
+            <button class="button-menu">
+                <a class="item-content" href="">
+                    <img id="item-img" src="/SistemaFinan/imgs/pagamento.png" alt="">
+                    Pagamentos
+                </a>
+            </button>
+            <button class="button-menu">
+                <a class="item-content" href="">
+                    <img id="item-img" src="/SistemaFinan/imgs/documentos.png" alt="">
+                    Despesas
+                </a>
+            </button>
+        </nav>
+        <footer>
+            <button id="button-sair">
+                <div class="item-content">
+                    <img id="item-img-sair" src="/SistemaFinan/imgs/sair.png" alt="">
+                    Sair
+                </div>
+            </button>
+        </footer>
+    </div>
+    <div class="box-content">
+        <nav class="nav-box-content">
+            <h3 class="tittle-nav">Finan / <span>Associados</span></h3>
+        </nav>
+        <main>
+            <header class="main-header">
+                <h4>Gestão de Pessoas</h4>
+                <h2 class="tittle-main-header">Associados</h2>
+                <p>Gerencie os dados dos associados da AMAQ</p>
+            </header>
+            <section class="gerenciamento-associados">
+                <div class="search">
+                    <input type="search" id="search-input" placeholder="Nome do associado">
+                    <button type="submit" class="search-btn">
+                        <img id="search-icon" src="/SistemaFinan/imgs/lupa.png" alt="">
+                    </button>
+                </div>
+                <div class="cadastrar">
+                    <button id="abrir-modal" class="cadastrar-btn">+ Novo Associado</button>
+                </div>
+            </section>
+            <section class="lista-associados">
+                <table class="table-associados">
+                    <thead>
+                        <tr>
+                            <th scope="col">ASSOCIADO</th>
+                            <th scope="col">CONTATO</th>
+                            <th scope="col">DATA DE CADASTRO</th>
+                            <th scope="col">AÇÕES</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="corpo-tabela">
+                        <tr>
+                            <td>
+                                <div class="associado">
+                                    <span class="iniciais">Md</span>
+                                    <strong>Maria de Fátima Oliveira</strong>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="contato">
+                                    <p class="p-contato">(88) 9 9123-4567</p>
+                                    <p class="p-contato">maria.oliveira@email.com</p>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="data">
+                                    12/02/2025 · <span id="vencimento">vencimento dia 10</span>
+                                </div> 
+                            </td>
+
+                            <td>
+                                <div class="acoes">
+                                    <button class="editar" type="button" aria-label="Editar associado">
+                                        <img class="icon-actions-editar" src="/SistemaFinan/imgs/escrever.png" alt="">
+                                    </button>
+                                    <button class="excluir" type="button" aria-label="Excluir associado">
+                                        <img class="icon-actions-excluir" src="/SistemaFinan/imgs/excluir.png" alt="">
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="associado">
+                                    <span class="iniciais">AB</span>
+                                    <strong>Ana Beatriz da Silva</strong>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="contato">
+                                    <p class="p-contato">(88) 9 8765-4321</p>
+                                    <p class="p-contato">ana.silva@email.com</p>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="data">
+                                    03/03/2025 · <span id="vencimento">vencimento dia 10</span>
+                                </div> 
+                            </td>
+
+                            <td>
+                                <div class="acoes">
+                                    <button class="editar" type="button" aria-label="Editar associado">
+                                        <img class="icon-actions-editar" src="/SistemaFinan/imgs/escrever.png" alt="">
+                                    </button>
+                                    <button class="excluir" type="button" aria-label="Excluir associado">
+                                        <img class="icon-actions-excluir" src="/SistemaFinan/imgs/excluir.png" alt="">
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="associado">
+                                    <span class="iniciais">JC</span>
+                                    <strong>Joana Carla Mendes</strong>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="contato">
+                                    <p class="p-contato">(88) 9 9888-1122</p>
+                                    <p class="p-contato">joana.mendes@email.com</p>
+                                    
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="data">
+                                    18/04/2025 · <span id="vencimento">vencimento dia 10</span>
+                                </div> 
+                            </td>
+
+                            <td>
+                                <div class="acoes">
+                                    <button class="editar" type="button" aria-label="Editar associado">
+                                        <img class="icon-actions-editar" src="/SistemaFinan/imgs/escrever.png" alt="">
+                                    </button>
+                                    <button class="excluir" type="button" aria-label="Excluir associado">
+                                        <img class="icon-actions-excluir" src="/SistemaFinan/imgs/excluir.png" alt="">
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="associado">
+                                    <span class="iniciais">FA</span>
+                                    <strong>Francisca Alves Lima</strong>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="contato">
+                                    <p class="p-contato">(88) 9 9432-1087</p>
+                                    <p class="p-contato">francisca.lima@email.com</p>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="data">
+                                    21/04/2025 · <span id="vencimento">vencimento dia 10</span>
+                                </div> 
+                            </td>
+
+                            <td>
+                                <div class="acoes">
+                                    <button class="editar" type="button" aria-label="Editar associado">
+                                        <img class="icon-actions-editar" src="/SistemaFinan/imgs/escrever.png" alt="">
+                                    </button>
+                                    <button class="excluir" type="button" aria-label="Excluir associado">
+                                        <img class="icon-actions-excluir" src="/SistemaFinan/imgs/excluir.png" alt="">
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </section>
+        </main>
+    </div>
+
+    
+    <!-- MODAL DE CADASTRO -->
+    <div class="modal-overlay" id="modal-cadastro">
+
+        <div class="modal">
+
+            <header class="modal-header">
+                <div>
+                    <h2>Novo Associado</h2>
+                    <p>Preencha os dados para cadastrar um associado.</p>
+                </div>
+            </header>
+
+            <form id="form-associado">
+
+                <div class="campo-formulario">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome"
+                        placeholder="Digite o nome completo" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone"
+                        placeholder="(88) 9 9999-9999" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email"
+                        placeholder="exemplo@email.com" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="vencimento">Dia de vencimento</label>
+                    <select id="vencimento" required>
+                        <option value="">Selecione o dia</option>
+                        <option value="5">Dia 05</option>
+                        <option value="10">Dia 10</option>
+                        <option value="15">Dia 15</option>
+                        <option value="20">Dia 20</option>
+                        <option value="25">Dia 25</option>
+                    </select>
+                </div>
+
+                <div class="botoes-modal">
+                    <button type="button" id="cancelar-cadastro">
+                        Cancelar
+                    </button>
+
+                    <button type="submit" id="confirmar-cadastro">
+                        Cadastrar
+                    </button>
+                </div>
+
+            </form>
+        </div>
+</div>
+<!-- script -->
+<script src="/SistemaFinan/associados/associados.js"></script>
+
+</body>
+
+</html>
