@@ -15,7 +15,9 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 300px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 10;
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.12);
 }
@@ -143,7 +145,12 @@ footer {
 
 .box-content {
     flex: 1;
+    margin-left: 300px;
+    min-width: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px;
     background-color: rgb(241, 241, 241);
+    height: 100vh;
 }
 
 .nav-box-content {
@@ -174,9 +181,13 @@ main {
 }
 
 .main-header {
-    /* background-color: aqua; */
-    padding-bottom: 20px;
-    margin-bottom: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 60px;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.04);
+    padding: 20px;
 }
 
 .tittle-main-header {
@@ -210,19 +221,13 @@ h4 {
     /* background-color: greenyellow; */
     display: flex;
     align-items: center;
-    gap: 5px;
-}
-
-.search-btn {
-    height: 45px;
-    width: 45px;
-    background-color: rgba(0, 221, 105);
-    box-shadow: 1px 0px 3px rgb(206, 206, 206);
+    gap: 10px;
 }
 
 #search-icon {
     width: 25px;
-    filter: brightness(0%) invert(100%) /* branco */
+    filter: brightness(0) saturate(100%) 
+          invert(28%) sepia(97%) saturate(541%) hue-rotate(113deg) brightness(96%) contrast(101%); /* verde */
 }
 
 #search-input {
@@ -240,7 +245,7 @@ h4 {
 
 .cadastrar-btn {
     background-color: rgba(0, 221, 105);
-    color: rgba(0, 107, 74, 1);
+    color: white;
     width: 150px;
     box-shadow: 1px 0px 3px rgb(206, 206, 206);
 }
@@ -384,6 +389,44 @@ h4 {
     transform: scale(1.1);
 }
 
+/* PAGINAÇÃO */
+
+.paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-top: 1px solid rgb(239, 241, 241);
+}
+
+.paginacao button {
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    border-radius: 8px;
+    background-color: rgba(0, 221, 105, 0.13);
+    color: rgba(0, 107, 74, 1);
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.paginacao button:hover:not(:disabled) {
+    background-color: rgba(0, 221, 105, 0.3);
+    transform: scale(1.05);
+}
+
+.paginacao button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.paginacao span {
+    color: rgb(100, 110, 110);
+    font-size: 13px;
+    font-weight: normal;
+}
+
 /* Modal Novo Associado */
 
 /* FUNDO DO MODAL */
@@ -477,13 +520,13 @@ h4 {
 
 #cancelar-cadastro {
     background-color: white;
-    border: 1px solid rgb(220, 225, 223);
+    border: 1px solid rgb(100, 110, 110);
     color: rgb(100, 110, 110);
 }
 
 #confirmar-cadastro {
     background-color: rgba(0, 221, 105);
-    color: rgba(0, 107, 74, 1);
+    color: white;
 }
 
 .botoes-modal button:hover {
@@ -494,5 +537,109 @@ h4 {
     .modal {
         width: calc(100% - 60px);
         padding: 20px;
+    }
+}
+
+
+/* MODAL DE EXCLUSÃO */
+
+.modal-excluir {
+    width: 450px;
+}
+
+/* BOTÃO CANCELAR - VERMELHO */
+
+#cancelar-exclusao {
+    background-color: white;
+    border: 1px solid rgb(100, 110, 110);
+    color: rgb(100, 110, 110);
+}
+
+#mensagem-exclusao {
+    color: rgb(101, 101, 101);
+}
+
+/* BOTÃO CONFIRMAR - VERDE */
+
+#confirmar-exclusao {
+    background-color: rgba(0, 221, 105);
+    color: white;
+}
+
+#confirmar-exclusao:hover {
+    background-color: rgb(0, 200, 95);
+}
+
+/* NOTIFICAÇÃO TOAST */
+
+.toast {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: white;
+    padding: 18px 22px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    border-left: 5px solid rgba(0, 107, 74, 1);
+    min-width: 280px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(30px);
+    transition: 0.3s ease;
+}
+
+/* EXIBIR NOTIFICAÇÃO */
+
+.toast.ativo {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* ÍCONE */
+
+.toast-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(0, 221, 105, 0.15);
+    color: rgba(0, 107, 74, 1);
+    font-size: 20px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* TEXTO */
+
+.toast-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.toast-content strong {
+    color: rgba(0, 107, 74, 1);
+    font-size: 14px;
+}
+
+.toast-content p {
+    color: rgb(120, 130, 130);
+    font-size: 12px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 550px) {
+    .toast {
+        left: 15px;
+        right: 15px;
+        min-width: auto;
     }
 }
