@@ -2,8 +2,6 @@
 
 **Sistema de Gerenciamento Financeiro da AMAQ**
 
-<text-placeholder></text-placeholder>
-
 O Finan é um sistema desenvolvido para auxiliar a gestão financeira da Associação de Mães Atípicas de Quixadá (AMAQ), centralizando o controle de associados, pagamentos e despesas em uma única plataforma.
 
 A aplicação tem como objetivo facilitar o acompanhamento das movimentações financeiras da instituição, proporcionar maior organização dos registros e oferecer uma visão geral da situação financeira por meio de um painel de controle (*dashboard*).
