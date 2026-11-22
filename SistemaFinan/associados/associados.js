@@ -435,7 +435,7 @@ function renderizarTabela() {
         botaoEditar.setAttribute("aria-label", "Editar associado");
 
         const imagemEditar = document.createElement("img");
-        imagemEditar.src = "/SistemaFinan/imgs/escrever.png";
+        imagemEditar.src = "/Sistema-Finan/SistemaFinan/imgs/escrever.png";
         imagemEditar.classList.add("icon-actions-editar");
 
         botaoEditar.appendChild(imagemEditar);
@@ -481,7 +481,7 @@ function renderizarTabela() {
         botaoExcluir.setAttribute("aria-label", "Excluir associado");
 
         const imagemExcluir = document.createElement("img");
-        imagemExcluir.src = "/SistemaFinan/imgs/excluir.png";
+        imagemExcluir.src = "/Sistema-Finan/SistemaFinan/imgs/excluir.png";
         imagemExcluir.classList.add("icon-actions-excluir");
 
         botaoExcluir.appendChild(imagemExcluir);

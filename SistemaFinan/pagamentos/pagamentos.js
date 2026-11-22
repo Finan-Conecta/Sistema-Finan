@@ -725,7 +725,7 @@ function renderizarTabela() {
 
         const imagemEditar = document.createElement("img");
 
-        imagemEditar.src = "/SistemaFinan/imgs/escrever.png";
+        imagemEditar.src = "/Sistema-Finan/SistemaFinan/imgs/escrever.png";
 
         imagemEditar.classList.add("icon-actions-editar");
 
