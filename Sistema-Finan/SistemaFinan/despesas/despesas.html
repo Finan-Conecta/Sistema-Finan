@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despesas - Finan</title>
+    <link rel="stylesheet" href="despesas.css">
+</head>
+
+<body>
+
+    <div class="menu">
+
+        <header class="logo-box">
+            <img id="logo-img" src="/Sistema-Finan/SistemaFinan/imgs/LogoHorizontal.png" alt="">
+        </header>
+
+        <section>
+            <div class="perfil-box">
+                <div class="perfil-img">
+                    <img id="perfil-img" src="/Sistema-Finan/SistemaFinan/imgs/AMAQ-LOGO.jpg" alt="">
+                </div>
+
+                <div class="perfil">
+                    <h5>AMAQ</h5>
+                    Associação
+                </div>
+            </div>
+
+            <h4 class="tittle-menu">MENU PRINCIPAL</h4>
+        </section>
+
+        <nav class="nav-menu">
+
+            <button class="button-menu">
+                <a class="item-content" href="/Sistema-Finan/SistemaFinan/dashboard/dashboard.html">
+                    <img id="item-img" src="/Sistema-Finan/SistemaFinan/imgs/dashboard.svg" alt="">
+                    Dashboard
+                </a>
+            </button>
+
+            <button class="button-menu">
+                <a class="item-content" href="/Sistema-Finan/SistemaFinan/associados/associados.html">
+                    <img id="item-img" src="/Sistema-Finan/SistemaFinan/imgs/associados.svg" alt="">
+                    Associados
+                </a>
+            </button>
+
+            <button class="button-menu">
+                <a class="item-content" href="/Sistema-Finan/SistemaFinan/pagamentos/pagamentos.html">
+                    <img id="item-img" src="/Sistema-Finan/SistemaFinan/imgs/pagamento.svg" alt="">
+                    Pagamentos
+                </a>
+            </button>
+
+            <button class="button-menu">
+                <a class="item-content" href="/Sistema-Finan/SistemaFinan/despesas/despesas.html">
+                    <img id="item-img" src="/Sistema-Finan/SistemaFinan/imgs/despesas.svg" alt="">
+                    Despesas
+                </a>
+            </button>
+
+        </nav>
+
+        <footer>
+            <button id="button-sair">
+                <div class="item-content">
+                    <img id="item-img-sair" src="/Sistema-Finan/SistemaFinan/imgs/sair.svg" alt="">
+                    Sair
+                </div>
+            </button>
+        </footer>
+
+    </div>
+
+
+    <div class="box-content">
+
+        <nav class="nav-box-content">
+            <h3 class="tittle-nav">
+                Finan / <span>Despesas</span>
+            </h3>
+        </nav>
+
+        <main>
+
+            <header class="main-header">
+                <h4>Gestão Financeira</h4>
+                <h2 class="tittle-main-header">Despesas</h2>
+                <p>Controle e gerencie as despesas da associação.</p>
+            </header>
+
+
+            <!-- FILTROS -->
+
+            <section class="filtros-despesas">
+                
+                <img
+                    id="search-icon"
+                    src="/Sistema-Finan/SistemaFinan/imgs/lupa.png"
+                    alt="">
+                <div class="search">
+                    <input
+                        type="search"
+                        id="search-input"
+                        placeholder="Pesquisar despesa">
+
+                </div>
+
+                <div class="filtro">
+                    <label for="filtro-ano">Ano</label>
+
+                    <select id="filtro-ano">
+                    </select>
+                </div>
+
+                <div class="filtro">
+                    <label for="filtro-mes">Mês</label>
+
+                    <select id="filtro-mes">
+                        <option value="1">Janeiro</option>
+                        <option value="2">Fevereiro</option>
+                        <option value="3">Março</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Maio</option>
+                        <option value="6">Junho</option>
+                        <option value="7">Julho</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                        <option value="12">Dezembro</option>
+                    </select>
+                </div>
+
+                <div class="filtro">
+                    <label for="filtro-status">Status</label>
+
+                    <select id="filtro-status">
+                        <option value="todos">Todos</option>
+                        <option value="efetuado">Efetuado</option>
+                        <option value="pendente">Pendente</option>
+                        <option value="atrasado">Atrasado</option>
+                    </select>
+                </div>
+                <div class="cadastrar">
+                    <button id="abrir-modal" class="cadastrar-btn">+ Nova Despesa</button>
+                </div>
+            </section>
+
+
+            <!-- TABELA DE DESPESAS -->
+
+            <section class="lista-despesas">
+
+                <header class="header-tabela">
+
+                    <div>
+                        <h2 id="titulo-mensalidades">
+                            Despesas
+                        </h2>
+
+                        <p>
+                            Selecione o status para alternar entre
+                            efetuado, pendente ou atrasado.
+                        </p>
+                    </div>
+
+                </header>
+
+                <div class="tabela-container">
+
+                    <table class="table-pagamentos">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">DESPESA</th>
+                                <th scope="col">VALOR</th>
+                                <th scope="col">VENCIMENTO</th>
+                                <th scope="col">PAGAMENTO</th>
+                                <th scope="col">STATUS</th>
+                                <th scope="col">AÇÕES</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="corpo-tabela">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- PAGINAÇÃO -->
+
+                <div class="paginacao">
+
+                    <button id="pagina-anterior" type="button">
+                        &#10094;
+                    </button>
+
+                    <span id="contador-paginas">
+                        Página 1 de 1
+                    </span>
+
+                    <button id="proxima-pagina" type="button">
+                        &#10095;
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- MODAL DE CADASTRO DE DESPESAS -->
+    <div class="modal-overlay" id="modal-cadastro">
+
+        <div class="modal">
+
+            <header class="modal-header">
+                <div>
+                    <h2 id="titulo-modal">Nova Despesa</h2>
+                    <p id="descricao-modal">
+                        Preencha os dados para cadastrar uma despesa.
+                    </p>
+                </div>
+            </header>
+
+            <form id="form-despesa" novalidate>
+
+                <div class="campo-formulario">
+                    <label for="descricao">Descrição da despesa</label>
+                    <input type="text" id="descricao" placeholder="Digite a descrição da despesa" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="valor">Valor da despesa</label>
+                    <input type="text" id="valor" placeholder="Digite o valor da despesa" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="vencimento">Dia de vencimento</label>
+                    <select id="dia-vencimento" required>
+                        <option value="">Selecione o dia</option>
+                        <option value="5">Dia 05</option>
+                        <option value="10">Dia 10</option>
+                        <option value="15">Dia 15</option>
+                        <option value="20">Dia 20</option>
+                        <option value="25">Dia 25</option>
+                    </select>
+                </div>
+
+                <div class="botoes-modal">
+                    <button type="button" id="cancelar-cadastro">
+                        Cancelar
+                    </button>
+
+                    <button type="submit" id="confirmar-cadastro">
+                        Cadastrar
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+    <!-- MODAL DE EDIÇÃO -->
+
+    <div class="modal-overlay" id="modal-edicao">
+
+        <div class="modal">
+
+            <header class="modal-header">
+
+                <div>
+                    <h2>Editar Despesa</h2>
+
+                    <p>
+                        Atualize as informações referentes à despesa.
+                    </p>
+                </div>
+
+            </header>
+
+            <form id="form-edicao-despesa">
+
+                <div class="campo-formulario">
+
+                    <label for="descricao-despesa">
+                        Descrição da despesa
+                    </label>
+
+                    <input
+                        type="text"
+                        id="descricao-despesa"
+                        disabled>
+
+                </div>
+
+                <div class="campo-formulario">
+
+                    <label for="valor-despesa">
+                        Valor da despesa
+                    </label>
+
+                    <input
+                        type="text"
+                        id="valor-despesa"
+                        disabled>
+
+                </div>
+
+                <div class="campo-formulario">
+
+                    <label for="status-despesa">
+                        Status da despesa
+                    </label>
+
+                    <select id="status-despesa" required>
+                        <option value="efetuado">Efetuado</option>
+                        <option value="pendente">Pendente</option>
+                        <option value="atrasado">Atrasado</option>
+                    </select>
+
+                </div>
+
+                <div class="campo-formulario">
+
+                    <label for="data-pagamento">
+                        Data do pagamento
+                    </label>
+
+                    <input
+                        type="date"
+                        id="data-pagamento">
+
+                </div>
+
+                <div class="botoes-modal">
+
+                    <button type="button" id="cancelar-edicao">
+                        Cancelar
+                    </button>
+
+                    <button type="submit" id="confirmar-edicao">
+                        Salvar Alterações
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- MODAL DE EXCLUSÃO -->
+    <div class="modal-overlay" id="modal-excluir">
+
+        <div class="modal modal-excluir">
+
+            <header class="modal-header">
+                <div>
+                    <h2>Excluir Despesa</h2>
+                    <p id="mensagem-exclusao">
+                        Você tem certeza de que deseja excluir essa despesa?
+                        Esta ação não pode ser desfeita.
+                    </p>
+                </div>
+            </header>
+
+            <div class="botoes-modal">
+
+                <button type="button" id="cancelar-exclusao">
+                    Cancelar
+                </button>
+
+                <button type="button" id="confirmar-exclusao">
+                    Confirmar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NOTIFICAÇÃO -->
+
+    <div class="toast" id="toast">
+
+        <div class="toast-icon">
+            ✓
+        </div>
+
+        <div class="toast-content">
+            <strong id="toast-titulo">Sucesso!</strong>
+
+            <p id="toast-mensagem">
+                Operação realizada com sucesso.
+            </p>
+        </div>
+
+    </div>
+
+
+    <script src="/Sistema-Finan/SistemaFinan/despesas/despesas.js"></script>
+
+</body>
+</html>
