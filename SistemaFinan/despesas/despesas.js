@@ -642,7 +642,7 @@ function renderizarTabela() {
         botaoEditar.type = "button";
         botaoEditar.setAttribute("aria-label", "Editar despesa");
         const imagemEditar = document.createElement("img");
-        imagemEditar.src = "/SistemaFinan/imgs/escrever.png";
+        imagemEditar.src = "/Sistema-Finan/SistemaFinan/imgs/escrever.png";
         imagemEditar.classList.add("icon-actions-editar");
         botaoEditar.appendChild(imagemEditar);
 
@@ -656,7 +656,7 @@ function renderizarTabela() {
         botaoExcluir.setAttribute("aria-label", "Excluir despesa");
 
         const imagemExcluir = document.createElement("img");
-        imagemExcluir.src = "/SistemaFinan/imgs/excluir.svg";
+        imagemExcluir.src = "/Sistema-Finan/SistemaFinan/imgs/excluir.svg";
         imagemExcluir.classList.add("icon-actions-excluir");
         botaoExcluir.appendChild(imagemExcluir);
 
